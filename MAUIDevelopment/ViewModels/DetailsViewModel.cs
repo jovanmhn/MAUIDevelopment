@@ -24,6 +24,7 @@ namespace MAUIDevelopment.ViewModels
             if (IsBusy) return;
             try
             {
+
                 IsBusy = true;
                 lista.Clear();
                 DateTime dat = new DateTime(2022, 6, 1);
