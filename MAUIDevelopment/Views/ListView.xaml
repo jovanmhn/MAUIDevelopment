@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIDevelopment.Views.ListView"
+             xmlns:Model="clr-namespace:MAUIDevelopment.Model.Types"
+             Title="ListView">
+    <CollectionView Margin="5" x:Name="ColView1">
+        <CollectionView.ItemTemplate>
+                
+            <DataTemplate x:DataType="Model:artikal_dokument">
+                <Frame Margin="5" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" >
+                <Grid ColumnDefinitions="2*,8*">
+                    <Label Text="{Binding broj_dok, StringFormat='Br. dok.: {0}'}" Grid.Column="0" VerticalTextAlignment="Center"/>
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label Text="{Binding id_partnerNavigation.naziv, StringFormat='Partner: {0}'}" HorizontalTextAlignment="Center"/>
+                        <Label Text="{Binding datum, StringFormat='Datum: {0:dd.MM.yyyy.}'}" HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

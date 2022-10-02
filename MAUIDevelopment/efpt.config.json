@@ -1,0 +1,65 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "ERPDatabase",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": "Model.Types",
+   "OutputContextPath": "Model",
+   "OutputPath": "Types",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "MAUIDevelopment",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[artikal_dnevnik]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[artikal_dokument]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[artikal_vrsta]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[dokument_vrsta]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[fiscal_dokument]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[fiscal_enu]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[partner]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "JOVAN-MATEBOOK\\SQLEXPRESS.development_abacus",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

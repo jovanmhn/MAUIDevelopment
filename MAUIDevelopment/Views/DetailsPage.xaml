@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIDevelopment.Views.DetailsPage"
+             xmlns:Model="clr-namespace:MAUIDevelopment.Model.Types"
+             xmlns:viewmodel="clr-namespace:MAUIDevelopment.ViewModels"
+             x:DataType="viewmodel:DetailsViewModel"
+             Title="{Binding Title}">
+    <Grid RowDefinitions="*,Auto">
+        
+    <CollectionView Margin="5" x:Name="ColView1" ItemsSource="{Binding lista}" Grid.Row="0">
+        <CollectionView.ItemTemplate>
+
+            <DataTemplate x:DataType="Model:artikal_dokument">
+                <Frame Margin="5" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" >
+                    <Grid ColumnDefinitions="2*,8*">
+                        <Label Text="{Binding broj_dok, StringFormat='Br. dok. \n {0}'}" Grid.Column="0" VerticalTextAlignment="Center"/>
+                        <VerticalStackLayout Grid.Column="1">
+                            <Label Text="{Binding id_partnerNavigation.naziv, StringFormat='Partner:{0}'}" HorizontalTextAlignment="Center"/>
+                            <Label Text="{Binding datum, StringFormat='Datum: {0:dd.MM.yyyy.}'}" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+        <Button Grid.Row="1" Text="Load" Command="{Binding GetDocumentsCommand}" IsEnabled="{Binding isNotBusy}">
+            
+        </Button>
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.RowSpan="2"/>
+    </Grid>
+</ContentPage>
