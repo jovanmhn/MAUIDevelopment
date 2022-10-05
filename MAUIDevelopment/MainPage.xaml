@@ -19,6 +19,16 @@
                 Text="Lista sa viewmodelom"
                 Clicked="List2Btn_Clicked"
                 HorizontalOptions="Center" />
+            <Button
+                x:Name="List2DX"
+                Text="Lista sa viewmodelom DevExpress"
+                Clicked="List2DX_Clicked"
+                HorizontalOptions="Center" />
+            <Button
+                x:Name="List2DXGrid"
+                Text="Grid sa viewmodelom DevExpress"
+                Clicked="List2DXGrid_Clicked"
+                HorizontalOptions="Center" />
 
         </VerticalStackLayout>
     </ScrollView>

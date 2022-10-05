@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIDevelopment.Views.DevExpressGridPage"
+             xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dxc="clr-namespace:DevExpress.Maui.Charts;assembly=DevExpress.Maui.Charts"
+             xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+             xmlns:dxsch="clr-namespace:DevExpress.Maui.Scheduler;assembly=DevExpress.Maui.Scheduler"
+             xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid"
+             xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+             xmlns:dxdf="clr-namespace:DevExpress.Maui.DataForm;assembly=DevExpress.Maui.Editors"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:Model="clr-namespace:MAUIDevelopment.Model.Types"
+             xmlns:viewmodel="clr-namespace:MAUIDevelopment.ViewModels"
+             x:DataType="viewmodel:DetailsViewModel"
+             Title="{Binding Title}">
+    <Grid x:Name="OsnovniGrid" RowDefinitions="*,Auto,Auto" ColumnDefinitions="2*,3*">
+        <dxg:DataGridView x:Name="DevExDataGrid" 
+                          ItemsSource="{Binding lista}" 
+                          Grid.Row="0" 
+                          BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"
+                          ShowAutoFilterRow="False"
+                          Grid.ColumnSpan="2"
+                          ColumnHeaderHeight="60"
+                          VerticalLineThickness="1"
+                          DoubleTap="DevExDataGrid_DoubleTap"
+                          LongPress="DevExDataGrid_LongPress">
+            <dxg:DataGridView.AdvancedColumnLayout>
+                <dxg:AdvancedColumnLayout>
+                    <dxg:AdvancedColumnLayout.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </dxg:AdvancedColumnLayout.ColumnDefinitions>
+                    <dxg:AdvancedColumnLayout.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                    </dxg:AdvancedColumnLayout.RowDefinitions>
+                </dxg:AdvancedColumnLayout>
+            </dxg:DataGridView.AdvancedColumnLayout>
+            <dxg:TextColumn Caption="Broj" FieldName="broj" Column="0" DisplayFormat="Br. dok. {0}" ColumnSpan="1" RowSpan="1" Row="0" Padding="2"/>
+            <dxg:TextColumn Caption="Vrsta" FieldName="id_vrstaNavigation.naziv"  Row="1" Column="0" ColumnSpan="1" RowSpan="1" Padding="2" />
+            <dxg:TextColumn Caption="Partner" FieldName="id_partnerNavigation.naziv" DisplayFormat="Partner: {0}" Column="1" Row="0" ColumnSpan="1" RowSpan="1" Padding="2" />
+            <dxg:TextColumn FieldName="datum" DisplayFormat="dd.MM.yyyy." Column="1" Row="1" ColumnSpan="1" RowSpan="1" Padding="2" />
+        </dxg:DataGridView>
+        <Label Margin="2" Text="Prikazi filter red" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Start"></Label>
+        <dxe:CheckEdit x:Name="dxCheckEdit" AllowIndeterminateInput="False" Margin="2" Grid.Row="1" Grid.Column="1" CheckedChanged="CheckEdit_CheckedChanged"></dxe:CheckEdit>
+        <Button Margin="2" x:Name="BtnLoad" Grid.Row="2" Text="Load" Command="{Binding GetDocumentsCommand}" IsEnabled="{Binding isNotBusy}"  Grid.ColumnSpan="2"></Button>
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>

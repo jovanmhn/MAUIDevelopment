@@ -4,7 +4,28 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MAUIDevelopment"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Flyout">
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Domestic">
+            <ShellContent Title="Cats"
+                          ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"/>
+            <ShellContent Title="Dogs"
+                          ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"/>
+        </Tab>
+        <ShellContent Title="Monkeys" 
+                      ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"/>
+        <ShellContent Title="Elephants"
+                      ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"/>
+        <ShellContent Title="Bears" 
+                      ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage"/>
+    </FlyoutItem>
+
 
     <ShellContent
         Title="Home"

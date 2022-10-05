@@ -20,5 +20,15 @@ public partial class MainPage : ContentPage
 	{
         await Shell.Current.GoToAsync(nameof(Views.DetailsPage));
     }
+
+	private async void List2DX_Clicked(object sender, EventArgs e)
+	{
+        await Shell.Current.GoToAsync(nameof(Views.DevExpressPage));
+    }
+
+	private async void List2DXGrid_Clicked(object sender, EventArgs e)
+	{
+        await Shell.Current.GoToAsync(nameof(Views.DevExpressGridPage));
+    }
 }
 
